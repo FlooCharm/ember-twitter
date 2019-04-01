@@ -1,0 +1,6 @@
+{{!-- {{#each this.args.tweets as |tweet|}} --}}
+{{#each @tweets as |tweet|}}
+	<TweetCard @tweet={{tweet}}/>
+{{else}}
+	No hay tweets
+{{/each}}
