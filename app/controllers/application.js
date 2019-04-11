@@ -1,25 +1,16 @@
 import Controller from '@ember/controller';
 import { action } from '@ember/object';
-import { tracked } from '@glimmer/tracking';
+import moment from 'moment';
 
 export default class ApplicationController extends Controller {
-	@tracked tweets = [{
-		id: 1,
-		username: 'wa',
-		description: 'hola'
-	}, {
-		id: 2,
-		username: 'wa',
-		description: 'cuac'
-	}, {
-		id: 3,
-		username: 'wa',
-		description: 'wa'
-	}];
-
 	@action
-	onSubmit() {
-		console.log('wa')
+	onSubmit(text) {
+		let newTweet = {
+			createdAt: new Date(),
+			description: text,
+			userId: 1
+		}
+		this.store.createRecord('tweet', newTweet).save();
 	}
 
 }

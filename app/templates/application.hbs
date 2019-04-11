@@ -1,7 +1,12 @@
-<h1>Twitter</h1>
-
-<h2>input box component</h2>
-<InputBox @onSubmit={{action this.onSubmit}}/>
-
-<h2>feed component</h2>
-<Feed @tweets={{this.tweets}}/>
+<Navbar />
+<div class="content flex row justify-content-center">
+	<div class="flex column">
+		
+	</div>
+	<div class="flex flex07 column">
+		<InputBox @onSubmit={{action this.onSubmit}}/>
+		<div class="margin-bottom">
+			<Feed @tweets={{this.model}}/>
+		</div>
+	</div>
+</div>

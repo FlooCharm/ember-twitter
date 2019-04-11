@@ -1,6 +1,9 @@
 {{!-- {{#each this.args.tweets as |tweet|}} --}}
-{{#each @tweets as |tweet|}}
+{{#each @tweets as |tweet index|}}
 	<TweetCard @tweet={{tweet}}/>
+	{{#unless (eq index @tweets.length)}}
+		<div class="divider"></div>
+	{{/unless}}
 {{else}}
 	No hay tweets
 {{/each}}

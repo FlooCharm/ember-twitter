@@ -1,11 +1,13 @@
-<form>
+<form class="input-container flex column align-items-flex-end">
 	<input type="text"
+		class='input-field'
 		placeholder="What's happening?"
 		oninput={{action this.handleChange value="target.value" }}
 		value={{this.text}}
 	>
 	<button
 		{{action this.handleSubmit}} on='submit'
+		class='primary-btn'
 	>
 		Tweet
 	</button>

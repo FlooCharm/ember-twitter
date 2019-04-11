@@ -4,18 +4,23 @@ import { action } from '@ember/object';
 
 export default class InputBoxComponent extends Component {
 	@tracked text;
+	@tracked error;
 
 	@action
 	handleChange(text) {
 		this.text = text;
+		this.error = false;
 	}
 
 	@action
-	handleSubmit() {
-		let newText = this.text;
-		if(this.args.onSubmit)
-			this.args.onSubmit(newText);
-		else
-			alert('handleSubmit');	
+	async handleSubmit() {
+		// if(this.args.onSubmit) {
+			let newText = this.text;
+			let req = await this.args.onSubmit(newText);
+			this.error = req.error;
+			this.text = '';
+		// }
+		// else
+		// 	alert('handleSubmit');	
 	}	
 }

@@ -1,2 +1,23 @@
-<li>{{@tweet.username}}</li>
-<li>{{@tweet.description}}</li>
+<div class="card">
+	<div class="img-container">
+		<CircleImg
+			@img={{@tweet.avatar}}
+		/>
+	</div>
+	<div class="flex column">
+		<div class="flex row">
+			<div class="margin-right">
+				<div class="bold white">
+					{{@tweet.userName}}
+					cuac
+				</div>
+			</div>
+			<div class="grey">
+				{{moment-format @tweet.createdAt 'DD/MM/YYYY, HH:mm'}}
+			</div>
+		</div>
+		<div class="white">
+			{{@tweet.description}}
+		</div>
+	</div>
+</div>
