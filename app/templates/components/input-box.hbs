@@ -2,12 +2,12 @@
 	<input type="text"
 		class='input-field'
 		placeholder="What's happening?"
-		oninput={{action this.handleChange value="target.value" }}
+		oninput={{action this.handleChange value="target.value"}}
 		value={{this.text}}
 	>
 	<button
 		{{action this.handleSubmit}} on='submit'
-		class='primary-btn'
+		class='primary-btn margin-bottom'
 	>
 		Tweet
 	</button>

@@ -1,9 +1,8 @@
 {{!-- {{#each this.args.tweets as |tweet|}} --}}
 {{#each @tweets as |tweet index|}}
-	<TweetCard @tweet={{tweet}}/>
-	{{#unless (eq index @tweets.length)}}
-		<div class="divider"></div>
-	{{/unless}}
+	<div class="divider"></div>
+	<TweetCard @tweet={{tweet}} @deleteTweet={{action this.args.deleteTweet}}/>
 {{else}}
 	No hay tweets
 {{/each}}
+<div class="divider"></div>

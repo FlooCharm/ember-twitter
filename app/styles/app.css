@@ -1,12 +1,17 @@
 body {
 	background: #10171e;
-	margin: 0
+	margin: 0;
+	font-family: 'Arial';
 }
 
 .content {
 	margin-top: 60px;
 	padding: 0 10vw;
 }
+
+.full-width { width: 100%; }
+
+.clickable { cursor: pointer; }
 
 /* flexbox */
 .flex { display: flex; }
@@ -21,6 +26,8 @@ body {
 
 .align-items-center { align-items: center; }
 .align-items-flex-end { align-items: flex-end; }
+
+.align-content-stretch { align-content: stretch; }
 
 .justify-content-center { justify-content: center; }
 .justify-content-space-between { justify-content: space-between; }
@@ -55,7 +62,6 @@ body {
 	width: 48px;
 	height: 48px;
 	border-radius: 50%;
-	background: #fff;
 	border: none;
 }
 

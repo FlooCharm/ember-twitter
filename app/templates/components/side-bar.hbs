@@ -1,0 +1,14 @@
+<div class='container flex column'>
+	<div class='blue-container'/>
+	<div class='txt-container'>
+		<div class='info-circle margin-right'>
+			<img src='assets/cuac.png'/>
+		</div>
+		<input 
+			class='name-input' 
+			placeholder="Escribe tu nombre" 
+			oninput={{action this.handleChange value="target.value"}}
+			value={{@name}}
+		/>
+	</div>
+</div>
