@@ -16,8 +16,8 @@ export default class InputBoxComponent extends Component {
 	async handleSubmit() {
 		// if(this.args.onSubmit) {
 			let newText = this.text;
-			let req = await this.args.onSubmit(newText);
-			this.error = req.error;
+			// let req = await this.args.onSubmit(newText);
+			// this.error = req.error;
 			this.text = '';
 		// }
 		// else

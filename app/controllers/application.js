@@ -13,13 +13,20 @@ export default class ApplicationController extends Controller {
 
 	@action
 	onSubmit(text) {
-		let newTweet = {
-			avatar: 'https://raw.githubusercontent.com/FlooCharm/tweet-app/master/src/assets/cuac.PNG',
-			createdAt: new Date(),
-			description: text,
-			userName: this.name
-		}
-		this.store.createRecord('draftTweet', newTweet).save();
+		let user = this.store.peekRecord('user', 1);
+		
+		let newTweet = this.store.createRecord('tweet', {
+			description: text
+		});
+		newTweet.set('user', user);
+		newTweet.save();
+		
+		// let newTweet = {
+		// 	avatar: 'https://raw.githubusercontent.com/FlooCharm/tweet-app/master/src/assets/cuac.PNG',
+		// 	description: text,
+		// 	username: this.name
+		// }
+		// this.store.createRecord('tweet', newTweet).save();
 	}
 
 	@action

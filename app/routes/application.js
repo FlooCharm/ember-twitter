@@ -1,7 +1,15 @@
 import Route from '@ember/routing/route';
+import { hash } from 'rsvp';
 
 export default class ApplicationRoute extends Route {
+	// model() {
+	// 	return this.store.findAll('tweet');
+	// }
+
 	model() {
-		return this.store.findAll('draft-tweet');
+		return hash({
+			tweets: this.store.findAll('tweet'),
+			users: this.store.findAll('user')
+		})
 	}
 }
