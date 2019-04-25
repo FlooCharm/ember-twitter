@@ -1,0 +1,15 @@
+<Navbar />
+<div class="content flex row justify-content-center">
+	<div class="flex column">
+		<SideBar 
+			@onChangeText={{action this.onChangeName}}
+			@name={{this.name}}
+		/>
+	</div>
+	<div class="flex flex07 column">
+		<InputBox @onSubmit={{action this.onSubmit}}/>
+		<div class="margin-bottom">
+			<Feed @tweets={{this.model.tweets}} @deleteTweet={{action this.deleteTweet}}/>
+		</div>
+	</div>
+</div>{{outlet}}
