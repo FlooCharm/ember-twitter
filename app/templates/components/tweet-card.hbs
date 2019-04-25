@@ -1,7 +1,7 @@
 <div class="card">
 	<div class="img-container">
 		<CircleImg
-			@img={{or @tweet.avatar 'assets/default-avatar.png'}}
+			@img={{or @tweet.user.avatar 'assets/default-avatar.png'}}
 		/>
 	</div>
 	<div class="flex column full-width">
